@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SilkRoadex</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <meta property="og:image" content="./assets/logo.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="
+  https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
+  "></script>
+  </head>
+  <body class="overflow-x-hidden scroll-smooth">
+    <header
+      id="stickyHeader"
+      class="w-full z-50 transition-all duration-300 ease-in-out"
+    >
+      <div
+        class="header-inner max-w-[1390px] 2xl:max-w-[1740px] md:px-[40px] mx-auto"
+      >
+        <div class="flex items-center justify-between p-4">
+          <div class="flex items-center justify-between gap-20">
+            <img src="./assets/logo.svg" alt="logo" class="hidden md:block" />
+
+            <img
+              src="./assets/logo.png"
+              alt="logo"
+              class="block md:hidden w-[34px] h-[34px]"
+            />
+
+            <nav
+              class="hidden hidden xl:flex items-center gap-4 text-sm font-medium text-[#1C1C1C]"
+            >
+              <a
+                href="#"
+                class="px-6 py-2 uppercase text-[16px] bg-[#FFFFFF66] hover:bg-[#121212] text-center text-[#1C1C1C] hover:text-[#fff] rounded-[2px] cursor-pointer transition-all duration-300 ease-in-out"
+                data-lang-en="Home"
+                data-lang-ru="Главная"
+                >ГЛАВНАЯ</a
+              >
+              <a
+                href="#discover"
+                class="px-6 py-2 uppercase text-[16px] bg-[#FFFFFF66] hover:bg-[#121212] text-center text-[#1C1C1C] hover:text-[#fff] rounded-[2px] cursor-pointer transition-all duration-300 ease-in-out"
+                data-lang-en="News"
+                data-lang-ru="Новости"
+                >Новости</a
+              >
+              <a
+                href="#contact"
+                class="px-6 py-2 uppercase text-[16px] bg-[#FFFFFF66] hover:bg-[#121212] text-center text-[#1C1C1C] hover:text-[#fff] rounded-[2px] cursor-pointer transition-all duration-300 ease-in-out"
+                data-lang-en="Contact"
+                data-lang-ru="Контакты"
+                >Контакты</a
+              >
+            </nav>
+          </div>
+          <div class="hidden xl:flex items-center justify-between gap-8">
+            <div
+              class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm"
+            >
+              <button
+                onclick="setLanguage('en')"
+                id="btn-en"
+                class="cursor-pointer text-black"
+              >
+                EN
+              </button>
+              <span class="text-black/40 select-none">|</span>
+              <button
+                onclick="setLanguage('ru')"
+                id="btn-ru"
+                class="cursor-pointer text-black"
+              >
+                RU
+              </button>
+            </div>
+            <a
+              href="https://wa.me/996502155122"
+              target="_blank"
+              class="hover:underline"
+            >
+              <img src="./assets/whatsapp.svg" alt="whatsapp" />
+            </a>
+            <a href="tel:+996502155122" class="hover:underline">
+              +996 502 155 122
+            </a>
+            <a
+              data-lang-ru="Связаться с нами"
+              data-lang-en="Contact"
+              href="https://wa.me/996502155122"
+              class="px-6 uppercase py-2 bg-[#2D47F1] hover:bg-[#2337C0] text-center text-white rounded-[4px] cursor-pointer transition-all duration-300 ease-in-out"
+            >
+              Связаться с нами
+            </a>
+          </div>
+          <button
+            id="burger"
+            class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
+            aria-label="Toggle menu"
+          >
+            <span class="block w-6 h-[2px] bg-black"></span>
+            <span class="block w-6 h-[2px] bg-black"></span>
+            <span class="block w-6 h-[2px] bg-black"></span>
+          </button>
+          <div
+            id="sidebar"
+            class="fixed top-0 left-0 h-full w-[70%] bg-[#263BE0] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden"
+          >
+            <button
+              id="closeSidebar"
+              class="absolute top-6 right-6 text-2xl"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+            <nav>
+              <ul class="flex flex-col gap-6 mt-12 text-lg">
+                <li>
+                  <a
+                    href="#"
+                    class="hover:underline"
+                    data-lang-en="Home"
+                    data-lang-ru="Главная"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#discover"
+                    class="hover:underline"
+                    data-lang-en="Our tours"
+                    data-lang-ru="Наши туры"
+                    >Our tours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#reviews"
+                    class="hover:underline"
+                    data-lang-en="Reviews"
+                    data-lang-ru="Отзывы"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="hover:underline"
+                    data-lang-en="Contact"
+                    data-lang-ru="Контакты"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+              <div
+                class="language-switcher mt-5 flex items-center gap-2 text-sm"
+              >
+                <button
+                  onclick="setLanguage('en')"
+                  id="btn-en"
+                  class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+                >
+                  EN
+                </button>
+                <span class="text-white/40 select-none">|</span>
+                <button
+                  onclick="setLanguage('ru')"
+                  id="btn-ru"
+                  class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+                >
+                  RU
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-[#CDDBE7] opacity-50 hidden z-30 xl:hidden"
+      ></div>
+    </header>
+    <main
+      class="px-4 mt-4 md:mt-0 md:px-[40px] 2xl:px-[80px] max-w-[1840px] mx-auto overflow-x-hidden scroll-smooth"
+    >
+      <section
+        class="hero py-[200px] px-[16px] rounded-[4px] xl:rounded-[24px] ovwerflow-hidden flex flex-col justify-center md:px-10 relative bg-gradient-to-b from-[#CBD9E6] to-[#F4F7FC]"
+      >
+        <div
+          class="pointer-events-none absolute top-0 right-0 h-full w-full bg-no-repeat !rounded-[4px] xl:rounded-[24px] bg-right bg-cover xl:bg-contain md:bg-[url('./assets/gradient-hero.png')]"
+        ></div>
+
+        <h6
+          data-aos="fade-down"
+          class="font-normal text-base leading-[110%] tracking-[2px] uppercase text-[16px] max-w-3xl z-10"
+        >
+          платформа современной торговли
+        </h6>
+        <h1
+          data-aos="fade-right"
+          class="font-medium text-[40px] md:text-[58px] xl:text-[82px] leading-[110%] uppercase my-10 max-w-7xl z-10"
+        >
+          Откройте доступ к рынку оптовых сделок — быстро, прозрачно, безопасно
+        </h1>
+        <p
+          data-aos="fade-up-right"
+          class="font-normal text-[16px] md:text-[18px] leading-[110%] tracking-normal max-w-7xl z-10"
+        >
+          Платформа для оптовой торговли, где компании находят друг друга,
+          заключают сделки и развивают бизнес без посредников. Выставляйте свои
+          товары или находите предложения от поставщиков по всей стране и за её
+          пределами.
+        </p>
+        <a
+          data-aos="fade-up-right"
+          data-lang-ru="Присоединиться к бирже"
+          data-lang-en="Contact"
+          href="#"
+          class="mt-10 px-6 py-4 gap-[10px] w-fit flex items-center justify-center uppercase bg-[#2D47F1] hover:bg-[#2337C0] text-white rounded-[4px] cursor-pointer transition-all duration-300 ease-in-out z-10"
+        >
+          Присоединиться к бирже
+          <img src="./assets/mdi-light_arrow-up.svg" alt="arrow" />
+        </a>
+      </section>
+      <section>
+        <div
+          class="absolute top-[50%] lg:top-[0%] left-0 w-full h-[100%] md:h-[160%] bg-[url('/assets/gradient-platform.png')] bg-no-repeat bg-top bg-cover md:bg-contain pointer-events-none -z-10"
+        ></div>
+
+        <h2
+          class="font-medium text-[40px] leading-[110%] uppercase mt-[100px] md:mt-[200px] mb-[80px]"
+        >
+          Для кого эта платформа?
+        </h2>
+        <p class="font-normal text-[18px] leading-[110%] tracking-normal">
+          Платформа создана для компаний, работающих с поставками, оптовыми
+          закупками и производством. Мы объединяем интересы обеих сторон сделки
+          — поставщика и покупателя.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-8 mt-[80px]"
+        >
+          <div
+            class="flex flex-col gap-5"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            <img
+              src="/assets/platform-1.png"
+              alt="platform"
+              width="126"
+              height="117"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Ритейл и сетевые дистрибьюторы
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Закупают сырьё и материалы по прозрачным и выгодным условиям.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col gap-5"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <img
+              src="/assets/platform-2.png"
+              alt="platform"
+              width="126"
+              height="117"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Производственные компании
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Закупают сырьё и материалы по прозрачным и выгодным условиям.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col gap-5"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+          >
+            <img
+              src="/assets/platform-3.png"
+              alt="platform"
+              width="126"
+              height="117"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Оптовые покупатели
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Находят стабильных поставщиков без посредников.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col gap-5"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
+            <img
+              src="/assets/platform-4.png"
+              alt="platform"
+              width="126"
+              height="117"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Поставщики товаров
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Поставщики товаров
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="mt-[200px] bg-gradient-to-b from-[#DDE4FB] to-[#F5F6FA] py-[160px] mx-[-20px] md:mx-[auto] px-[20px] md:px-[80px] rounded-[24px]"
+      >
+        <h2
+          data-aos="zoom-in"
+          class="font-inter font-medium text-[40px] md:text-[56px] xl:text-[82px] leading-[110%] uppercase"
+        >
+          Мы объединяем продавцов и покупателей реальных товаров
+        </h2>
+        <p class="mt-10 font-inter font-normal text-[24px] leading-[110%]">
+          Центральная площадка для сделок между бизнесами
+        </p>
+        <div class="mt-[120px] w-1/2">
+          <p data-aos="zoom-in-right">
+            Каждый день на платформе создаются сотни предложений: от зерна и
+            строительных материалов до промышленного оборудования.
+          </p>
+        </div>
+        <div class="w-1/2 ml-auto mt-10" data-aos="zoom-in-left">
+          <p>
+            Поставщики выставляют слоты с описанием, объёмами и ценами — а
+            заинтересованные покупатели сразу видят это и могут оперативно
+            заключить сделку.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-between gap-4 mt-[200px]">
+          <img
+            src="./assets/MarketLink-1.png"
+            alt="Market Link"
+            class="w-full sm:w-1/3 md:w-auto xl:w-1/4 max-h-[280px] md:max-w-[45%] xl:max-w-[280px] 2xl:max-w-[360px]"
+          />
+          <img
+            src="./assets/MarketLink-2.png"
+            alt="Market Link"
+            class="w-full sm:w-1/3 md:w-auto xl:w-1/4 max-h-[280px] md:max-w-[45%] xl:max-w-[280px] 2xl:max-w-[360px]"
+          />
+          <img
+            src="./assets/MarketLink-3.png"
+            alt="Market Link"
+            class="w-full sm:w-1/3 md:w-auto xl:w-1/4 max-h-[280px] md:max-w-[45%] xl:max-w-[280px] 2xl:max-w-[360px]"
+          />
+          <img
+            src="./assets/MarketLink-4.png"
+            alt="Market Link"
+            class="w-full sm:w-1/3 md:w-auto xl:w-1/4 max-h-[280px] md:max-w-[45%] xl:max-w-[280px] 2xl:max-w-[360px]"
+          />
+        </div>
+        <div class="mt-[120px] w-1/2">
+          <p data-aos="zoom-in-right">
+            Платформа создана для бизнеса, который работает с физическим
+            товаром: сырьём, сельхозпродукцией, стройматериалами, товарами
+            массового потребления.
+          </p>
+        </div>
+        <div class="w-1/2 ml-auto mt-10" data-aos="zoom-in-left">
+          <p>
+            За годы работы мы зарекомендовали себя как надёжный партнёр для
+            инвесторов разного уровня — от частных трейдеров до управляющих
+            фондами и корпоративных клиентов. Мы предоставляем полный набор
+            инструментов для торговли акциями, облигациями, индексами, ETF и
+            производными — с максимальной прозрачностью и поддержкой на каждом
+            этапе.
+          </p>
+        </div>
+      </section>
+      <section
+        class="mt-[200px] bg-gradient-custom pt-[160px] pb-[80px] md:py-[160px] px-4 md:px-[80px] rounded-[24px]"
+      >
+        <div class="flex flex-wrap gap-10 md:gap-0">
+          <h2
+            data-aos="fade-right"
+            class="flex-1 font-inter font-medium text-[40px] md:text-[58px] 2xl:text-[82px] leading-[110%] uppercase"
+          >
+            Как это работает?
+          </h2>
+          <h6
+            data-aos="fade-left"
+            class="flex-1 font-inter font-medium text-[24px] md:text-[36px] 2xl:text-[48px] leading-[110%] uppercase"
+          >
+            Товарная биржа — это цифровое пространство, где
+            <span class="text-[#2D47F1] italic"
+              >бизнес находит надёжных партнёров и заключает сделки
+              быстрее</span
+            >
+          </h6>
+        </div>
+        <div class="flex flex-col mt-[120px] gap-10">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            class="bg-gradient-to-l from-[#2D47F1] via-[#B5C4F4] to-[#B5C4F4] px-4 py-20 md:py-10 2xl:py-20 md:px-10 rounded-[4px]"
+          >
+            <div class="flex gap-10 items-center mb-10">
+              <img src="./assets/howItWorks-1.svg" alt="how it works" />
+              <p
+                class="text-[#2D47F1] font-inter font-medium text-[32px] md:text-[40px] leading-[110%] uppercase"
+              >
+                Создайте слот
+              </p>
+            </div>
+            <p class="font-inter font-normal text-[24px] leading-[110%]">
+              Разместите информацию о товаре, объёмах, условиях поставки и цене.
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class="px-4 py-20 md:py-10 2xl:py-20 md:px-10 rounded-[24px]"
+          >
+            <div class="flex gap-10 items-center mb-10">
+              <img src="./assets/howItWorks-2.svg" alt="how it works" />
+              <p
+                class="text-[#2D47F1] font-inter font-medium text-[32px] md:text-[40px] leading-[110%] uppercase"
+              >
+                Получите отклик
+              </p>
+            </div>
+            <p class="font-inter font-normal text-[24px] leading-[110%]">
+              Контрагенты находят ваш лот через фильтры и отправляют
+              предложения.
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2500"
+            class="px-4 py-20 md:py-10 2xl:py-20 md:px-10 rounded-[24px]"
+          >
+            <div class="flex gap-10 items-center mb-10">
+              <img src="./assets/howItWorks-3.svg" alt="how it works" />
+              <p
+                class="text-[#2D47F1] font-inter font-medium text-[32px] md:text-[40px] leading-[110%] uppercase"
+              >
+                Заключите сделку
+              </p>
+            </div>
+            <p class="font-inter font-normal text-[24px] leading-[110%]">
+              Обсуждайте условия, подписывайте контракт и переходите к поставке.
+            </p>
+          </div>
+        </div>
+        <p class="font-inter font-normal text-[24px] leading-[110%] mt-10">
+          Всё через единую платформу. Без звонков, без Excel, без лишней суеты.
+        </p>
+      </section>
+      <section class="mt-[100px] md:mt-[200px]">
+        <h2 class="font-medium text-[40px] leading-[110%] uppercase">
+          Преимущества
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-8 mt-[80px]"
+        >
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            class="flex flex-col gap-5"
+          >
+            <img
+              src="/assets/advantages-1.png"
+              alt="advantages"
+              width="82"
+              height="82"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Безопасность и прозрачность
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Закупают сырьё и материалы по прозрачным и выгодным условиям.
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="flex flex-col gap-5"
+          >
+            <img
+              src="/assets/advantages-2.png"
+              alt="advantages"
+              width="82"
+              height="82"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Быстрый поиск поставщиков
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Закупают сырьё и материалы по прозрачным и выгодным условиям
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class="flex flex-col gap-5"
+          >
+            <img
+              src="/assets/advantages-3.png"
+              alt="advantages"
+              width="82"
+              height="82"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Гибкость
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Находят стабильных поставщиков без посредников.
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="flex flex-col gap-5"
+          >
+            <img
+              src="/assets/advantages-4.png"
+              alt="advantages"
+              width="82"
+              height="82"
+              class="mb-4"
+            />
+            <h3
+              class="font-inter font-medium text-[24px] leading-[110%] uppercase mb-2"
+            >
+              Экономия времени
+            </h3>
+            <p
+              class="font-inter font-normal text-[18px] leading-[110%] tracking-normal"
+            >
+              Выставляют предложения и находят новых клиентов на открытом рынке.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        data-aos-duration="1500"
+        class="bg-[url('/assets/svgviewer.svg')] bg-[#1E30A4] bg-no-repeat bg-right md:bg-center bg-cover min-h-[700px] rounded-[24px] py-[80px] px-4 md:px-[40px] mt-[200px]"
+      >
+        <div class="flex md:flex-row flex-col gap-10  text-white">
+          <h2
+            class="flex-1 font-inter font-medium text-[40px] md:text-[64px] 2xl:text-[82px] leading-[110%] uppercase"
+          >
+            Бизнес выбирает нас — потому что мы решаем задачи, а не создаём
+            новые
+          </h2>
+          <div class="flex-1">
+            <p class="font-inter font-normal text-[24px] leading-[110%]">
+              Наша платформа — это не витрина, а реальный инструмент для
+              заключения сделок. Нас выбирают производители, закупщики и
+              трейдеры, которые ценят прозрачные условия, экономию времени и
+              возможность находить надёжных партнёров без посредников.
+            </p>
+            <ul class="list-disc marker:text-white pl-5 mt-10 space-y-10">
+              <li class="font-inter font-medium text-[24px] leading-[110%]">
+                Сделки от 1 тонны до сотен тысяч единиц
+              </li>
+              <li class="font-inter font-medium text-[24px] leading-[110%]">
+                100+ товарных категорий: от стройматериалов и зерна до
+                электроники и упаковки
+              </li>
+              <li class="font-inter font-medium text-[24px] leading-[110%]">
+                Лицензии и юридическое сопровождение
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section
+        data-aos="zoom-in-down"
+        data-aos-duration="1500"
+        class="bg-[url('/assets/gradient-bg1.png')] bg-[#F5F6FA] bg-no-repeat bg-cover rounded-[24px] py-[80px] px-4 md:px-[40px] mt-[144px]"
+      >
+        <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+          <h3
+            class="w-full md:w-1/2 font-inter font-medium text-[40px] md:text-[58px] 2xl:text-[82px] leading-[110%] uppercase"
+          >
+            Начните торговать по-новому&nbsp;&mdash; без посредников и&nbsp;без
+            потерь
+          </h3>
+          <p
+            class="w-full md:w-1/2 font-inter font-medium text-[24px] md:text-[36px] 2xl:text-[48px] leading-[110%] uppercase"
+          >
+            Сертифицированная платформа, многолетний опыт, круглосуточная
+            поддержка. Всё, чтобы вы чувствовали уверенность в каждом шаге.
+          </p>
+        </div>
+        <a
+          data-lang-ru="Присоединиться к бирже"
+          data-lang-en="Contact"
+          href="#"
+          class="mt-10 px-6 py-4 gap-[10px] w-full flex items-center justify-center uppercase bg-[#2D47F1] hover:bg-[#2337C0] text-white rounded-[4px] cursor-pointer transition-all duration-300 ease-in-out z-10"
+        >
+          Присоединиться к бирже
+          <img src="./assets/mdi-light_arrow-up.svg" alt="arrow" />
+        </a>
+        <p
+          class="mt-10 font-inter font-normal text-[18px] leading-[110%] tracking-[0px]"
+        >
+          Регистрация занимает 1 минуту.
+        </p>
+      </section>
+    </main>
+    <footer class="py-8 bg-[#fff] mt-[200px]">
+      <div class="mx-auto px-[40px] 2xl:px-[80px] max-w-[1840px]">
+        <div class="flex flex-col lg:flex-row justify-between gap-10">
+          <div class="flex-1 text-secondary">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary text-[#0042BA]"
+              data-lang-en="Contact Information"
+              data-lang-ru="Контактная информация"
+            >
+              Contact Information
+            </h2>
+            <p class="mb-5">
+              <strong class="mr-2" data-lang-en="Address:" data-lang-ru="Адрес:"
+                >Address:</strong
+              >
+              <span
+                data-lang-en="15 Baba-Ata Street, Bishkek"
+                data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15"
+                >Кыргызская Республика, г.Бишкек, Токтогула 45</span
+              >
+            </p>
+            <div class="mb-5 flex gap-1">
+              <strong class="mr-2" data-lang-en="Phone:" data-lang-ru="Телефон:"
+                >Phone:</strong
+              >
+              <a href="tel:+996502155122" class="hover:underline block">
+                +996 502 155 122
+              </a>
+            </div>
+            <div class="mb-5 flex gap-1">
+              <strong class="mr-2">Email:</strong>
+              <a href="mailto:d.asanovdesign@gmail.com" class="hover:underline">
+                d.asanovdesign@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="flex-1 text-secondary">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary text-[#0042BA]"
+              data-lang-en="Navigation"
+              data-lang-ru="Навигация"
+            >
+              Navigation
+            </h2>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" data-lang-en="Home" data-lang-ru="Главная"
+                  >О компании</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#discover"
+                  data-lang-en="Our tours"
+                  data-lang-ru="Наши туры"
+                  >Новости</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  data-lang-en="Contact"
+                  data-lang-ru="Контакты"
+                  >Контакты</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex-1">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary text-[#0042BA]"
+              data-lang-en="Follow Us"
+              data-lang-ru="Мы в соцсетях"
+            >
+              Follow Us
+            </h2>
+            <div class="flex space-x-4 justify-start">
+              <a
+                href="https://www.instagram.com/kg_tours_/"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/in.svg"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                href="https://wa.me/996700334499"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/twitter.svg"
+                  alt="Twitter"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/max.baike"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const burger = document.getElementById("burger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    const openMenu = () => {
+      sidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      header.classList.add("h-screen");
+    };
+
+    const closeMenu = () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      header.classList.remove("h-screen");
+    };
+
+    burger.addEventListener("click", openMenu);
+    closeSidebar.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    const sidebarButton = sidebar.querySelectorAll("button");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+    sidebarButton.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    const header = document.getElementById("stickyHeader");
+
+    let lastScrollY = window.scrollY;
+    let isFixed = false;
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 150 && !isFixed) {
+        // Устанавливаем фиксированное положение при спуске
+        header.classList.add(
+          "fixed",
+          "top-0",
+          "bg-white/40",
+          "backdrop-blur-[40px]"
+        );
+        isFixed = true;
+      } else if (currentScrollY <= 150 && isFixed) {
+        // Возвращаем в обычное положение при подъеме вверх
+        header.classList.remove("fixed", "top-0");
+        isFixed = false;
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  </script>
+</html>
