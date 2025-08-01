@@ -48,11 +48,11 @@
                 >ГЛАВНАЯ</a
               >
               <a
-                href="#discover"
+                href="#advantages"
                 class="px-6 py-2 uppercase text-[16px] bg-[#FFFFFF66] hover:bg-[#121212] text-center text-[#1C1C1C] hover:text-[#fff] rounded-[2px] cursor-pointer transition-all duration-300 ease-in-out"
-                data-lang-en="News"
-                data-lang-ru="Новости"
-                >Новости</a
+                data-lang-en="Advantages"
+                data-lang-ru="Преимущества"
+                >Преимущества</a
               >
               <a
                 href="#contact"
@@ -135,20 +135,11 @@
                 </li>
                 <li>
                   <a
-                    href="#discover"
+                    href="#advantages"
                     class="hover:underline"
-                    data-lang-en="Our tours"
-                    data-lang-ru="Наши туры"
-                    >Our tours</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#reviews"
-                    class="hover:underline"
-                    data-lang-en="Reviews"
-                    data-lang-ru="Отзывы"
-                    >Reviews</a
+                    data-lang-en="Advantages"
+                    data-lang-ru="Преимущества"
+                    >Advantages</a
                   >
                 </li>
                 <li>
@@ -576,7 +567,7 @@
           Всё через единую платформу. Без звонков, без Excel, без лишней суеты.
         </p>
       </section>
-      <section class="mt-[100px] md:mt-[200px]">
+      <section class="mt-[100px] md:mt-[200px]" id="advantages">
         <h2
           class="font-medium text-[40px] leading-[110%] uppercase"
           data-lang-ru="Преимущества"
@@ -754,8 +745,6 @@
         </div>
       </section>
       <section
-        data-aos="zoom-in-down"
-        data-aos-duration="1500"
         class="bg-[url('/assets/gradient-bg1.png')] bg-[#F5F6FA] bg-no-repeat bg-cover rounded-[24px] py-[80px] px-4 md:px-[40px] mt-[144px]"
       >
         <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
@@ -798,7 +787,7 @@
         </p>
       </section>
     </main>
-    <footer class="py-8 bg-[#fff] mt-[200px]">
+    <footer class="py-8 bg-[#fff] mt-[200px]" id="contact">
       <div class="mx-auto px-[40px] 2xl:px-[80px] max-w-[1840px]">
         <div class="flex flex-col lg:flex-row justify-between gap-10">
           <div class="flex-1 text-secondary">
@@ -846,15 +835,16 @@
             <ul class="space-y-3">
               <li>
                 <a href="#" data-lang-en="Home" data-lang-ru="Главная"
-                  >О компании</a
+                  >ГЛАВНАЯ</a
                 >
               </li>
+
               <li>
                 <a
-                  href="#discover"
-                  data-lang-en="Our tours"
-                  data-lang-ru="Наши туры"
-                  >Новости</a
+                  href="#advantages"
+                  data-lang-en="Advantages"
+                data-lang-ru="Преимущества"
+                >Преимущества</a
                 >
               </li>
               <li>
@@ -928,18 +918,18 @@
     function updateMetaTags(lang) {
       const metaData = {
         en: {
-          title: "Kyrgyzstan Tours & Travel",
+          title: "SilkRoadex",
           description:
-            "Plan your trip to Kyrgyzstan with MaxKG Tours. Experience Ala-Kul trek, Issyk-Kul Lake, yurt stays, Lenin Peak base camp, ethnic and eco tours. Book a guided adventure now",
+            "Unlock access to the wholesale market — fast, transparent, secure",
           ogDescription:
-            "Discover Kyrgyzstan with guided trekking, yurt stays, lakefront relaxation, horseback tours and nomadic adventures. Book affordable group or private tours with MaxKG Tours.",
+            "A platform for wholesale trading where companies connect, make deals, and grow their business without intermediaries. List your products or discover supplier offers across the country and beyond.",
         },
         ru: {
-          title: "Туры по Кыргызстану — Горы, Озера и Кочевая Культура",
+          title: "SilkRoadex",
           description:
-            "Исследуйте Кыргызстан: пешие туры, озера, горячие источники и юрты.",
+            "Откройте доступ к рынку оптовых сделок — быстро, прозрачно, безопасно",
           ogDescription:
-            "Планируете отдых в Кыргызстане? Туроператор MaxKG Tour предлагает треккинг, этнотуры, поездки на озера (Иссык-Куль, Ала-Куль, Тулпар-Куль), конные туры, ночёвки в юртах и многое другое.",
+            "Платформа для оптовой торговли, где компании находят друг друга, заключают сделки и развивают бизнес без посредников. Выставляйте свои товары или находите предложения от поставщиков по всей стране и за её пределами.",
         },
       };
 
