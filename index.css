@@ -25,3 +25,8 @@ html {
         min-height: 100vh;
     }
   }
+
+
+  [data-aos] {
+    will-change: transform, opacity;
+  }
